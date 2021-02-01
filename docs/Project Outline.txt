@@ -1,0 +1,18 @@
+**Purpose**
+Overlay great quotes on beautiful images and download result
+
+//Outline deliverables
+Generate / Type quote
+Generate / Upload image
+
+Style quote text
+
+Download result
+
+//Design UI based on deliverables
+Check that all functionality is represented in UI
+(Using figma)
+
+//Plan API endpoints
+Map user interaction from start to finish
+(using lucidchart)

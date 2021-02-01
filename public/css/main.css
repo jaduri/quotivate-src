@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+html{
+  position: relative;
+}
+body {
+  margin: 0;
+}
+ul{
+  padding: 0;
+}
+
+/*====================NAV STYLES==================*/
