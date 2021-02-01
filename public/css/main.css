@@ -5,10 +5,73 @@ html{
   position: relative;
 }
 body {
+  background-color: #1262e317;
+  height: 100vh;
   margin: 0;
 }
 ul{
   padding: 0;
 }
+button{
+  outline: none;
+}
+#root{
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
 
 /*====================NAV STYLES==================*/
+.navbar {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 2%;
+  width: 100%;
+}
+.logo{
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.feedback-btn{
+  background-color: unset;
+  border: none;
+  color: #4e4e4e;
+  font-size: 18px;
+  max-height: 35px;
+}
+
+/*====================MAIN STYLES==================*/
+main{
+  display: flex;
+  height: calc(100% - 60px);
+  padding: 10px 2%;
+  width: 100%;
+}
+
+/*====================SIDEBAR STYLES==================*/
+.sidebar{
+  background-color: #fff;
+  height: 100%;
+  padding: 10px;
+  width: 300px;
+}
+.side-heading{
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+.setting{
+  margin: 25px 0;
+}
+.setting > label{
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+}
+.setting > input{
+  margin: 5px 0;
+  width: 50%;
+}
