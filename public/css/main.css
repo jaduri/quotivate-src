@@ -1,3 +1,7 @@
+:root{
+  --primary: #EB4034;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +17,17 @@ ul{
   padding: 0;
 }
 button{
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  min-height: 35px;
+  min-width: 35px;
+  color: #fff;
   outline: none;
+  transition: 0.1s ease;
+}
+button:active{
+  transform: scale(0.97);
 }
 #root{
   height: 100%;
@@ -48,8 +62,11 @@ button{
 main{
   display: flex;
   height: calc(100% - 60px);
-  padding: 10px 2%;
+  padding: 10px 1%;
   width: 100%;
+}
+main > div{
+  border-radius: 20px;
 }
 
 /*====================SIDEBAR STYLES==================*/
@@ -57,7 +74,8 @@ main{
   background-color: #fff;
   height: 100%;
   padding: 10px;
-  width: 300px;
+  width: 320px;
+  min-width: 250px;
 }
 .side-heading{
   font-size: 1.4rem;
@@ -74,4 +92,78 @@ main{
 .setting > input{
   margin: 5px 0;
   width: 50%;
+}
+
+/*===================SMALL CONTAINER STYLES==================*/
+.grid-container{
+  display: grid;
+  flex-grow: 1;
+  gap: 15px;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+  "quote image"
+  "large-container large-container";
+  padding: 0 15px;
+  max-width: 905px;
+}
+.small-container{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+  height: 40vh;
+  max-height: 300px;
+  position: relative;
+  width: 430px;
+}
+.quote-container{
+  grid-area: quote;
+  justify-content: flex-end;
+}
+.image-container{
+  grid-area: image;
+  justify-content: space-between;
+}
+.fresh-content{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.quote-setter, .image-getter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+.image-upload-btn{
+
+}
+.gen-text{
+  border-radius: 5px;
+  border: 1px solid #c4c4c4;
+  height: 35px;
+  margin: 5px 10px;
+  min-width: 60%;
+}
+
+/*===================LARGE CONTAINER STYLES==================*/
+
+
+.large-container{
+  background-color: #fff;
+  grid-area: large-container;
+  width: 2fr;
+  height: 1fr;
+}
+
+
+
+
+
+.card {
+  border-radius: 20px;
+  box-shadow: 0 0 5px #c4c4c499;
 }

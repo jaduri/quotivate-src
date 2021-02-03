@@ -3,7 +3,7 @@ import React from "react";
 function Sidebar(){
 
   return (
-    <div className="sidebar">
+    <div className="sidebar card">
       <h2 className="side-heading">Quote Settings</h2>
       <p className="setting">
         <label>Font size</label>
