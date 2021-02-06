@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { updateQuote } from "../actions";
 
-function QuoteGen(){
+function QuoteGen({ quote, onQuoteConfirmed }){
+  const [ inputValue, setInputValue ] = useState("Quote of the day");
+
+  const trackInput = (e) => {
+    const val = e.target.value;
+    return setInputValue(val);
+  }
 
   return (
     <div className="small-container quote-container card">
@@ -8,9 +16,17 @@ function QuoteGen(){
         <img src="/icons/sync.svg" width="15px" height="15px" />
       </button>
 
+      <p>{inputValue}</p>
+
       <p className="quote-setter">
-      <input type="text" className="gen-text" />
-      <button className="add-quote" >
+      <input type="text"
+        className="gen-text"
+        value={inputValue}
+        onChange={trackInput}
+         />
+      <button className="add-quote"
+        onClick={()=>{onQuoteConfirmed(inputValue)}}
+        >
         <img src="/icons/add.svg" width="15px" height="15px" />
       </button>
       </p>
@@ -18,4 +34,12 @@ function QuoteGen(){
   );
 }
 
-export default QuoteGen;
+const mapStateToProps = state => ({
+  quote: state.quote
+});
+
+const mapDispatchToProps = dispatch => ({
+  onQuoteConfirmed: quote => dispatch(updateQuote(quote))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuoteGen);

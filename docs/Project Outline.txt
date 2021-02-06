@@ -32,3 +32,9 @@ Sub Components
 - TextInput
 - TextBtn
 - IconBtn
+
+//Add functionality to front end components
+(using react & redux)
+- Use state to manage controlled inputs
+- Add upload and download functionality
+- Manage state with redux
