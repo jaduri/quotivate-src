@@ -1,6 +1,10 @@
 import React, { useRef, useState } from "react";
+import TextBtn from "./sub-components/TextBtn";
+import IconBtn from "./sub-components/IconBtn";
+import { connect } from "react-redux";
+import { updateImage } from "../actions";
 
-function ImageGen(){
+function ImageGen({image, onImageConfirmed}){
   const file = useRef(null);
   const [ imageUrl, setImageUrl ] = useState("/images/sungrass.jpg");
 
@@ -10,9 +14,11 @@ function ImageGen(){
 
   const readFile = async () => {
     const reader = new FileReader();
-    reader.readAsDataURL(file.current.files[0]);
+    (file.current.files[0] !== undefined) && (
+      reader.readAsDataURL(file.current.files[0])
+    )
     reader.onload = function(url){
-      return setImageUrl(url.target.result);
+    return setImageUrl(url.target.result)
     }
   }
 
@@ -34,13 +40,27 @@ function ImageGen(){
         type="file"
         onChange={readFile}
         style={{visibility: "hidden"}} />
-      <button className="image-upload-btn long-btn"
-        onClick={uploadFile}>
-        <span>Upload</span>
-        <img src="/icons/upload.svg" width="15px" height="15px" />
-      </button>
+        <TextBtn
+          text="Upload"
+          classes="image-upload-btn long-btn"
+          iconUrl="/icons/upload.svg"
+          clickHandler={uploadFile}
+         />
+         <IconBtn
+           classes="preview-content"
+           iconUrl="/icons/preview.svg"
+           clickHandler={()=>{onImageConfirmed(imageUrl)}}
+          />
     </div>
   );
 }
 
-export default ImageGen;
+const mapStateToProps = state => ({
+  image: state.image
+})
+
+const mapDispatchToProps = dispatch => ({
+  onImageConfirmed: image => dispatch(updateImage(image))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageGen);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import IconBtn from "./sub-components/IconBtn";
 import { connect } from "react-redux";
 import { updateQuote } from "../actions";
 
@@ -12,9 +13,11 @@ function QuoteGen({ quote, onQuoteConfirmed }){
 
   return (
     <div className="small-container quote-container card">
-      <button className="fresh-content">
-        <img src="/icons/sync.svg" width="15px" height="15px" />
-      </button>
+      <IconBtn
+        classes="fresh-content"
+        iconUrl="/icons/sync.svg"
+        clickHandler={()=>{"Clicked"}}
+         />
 
       <p>{inputValue}</p>
 
@@ -24,12 +27,12 @@ function QuoteGen({ quote, onQuoteConfirmed }){
         value={inputValue}
         onChange={trackInput}
          />
-      <button className="add-quote"
-        onClick={()=>{onQuoteConfirmed(inputValue)}}
-        >
-        <img src="/icons/add.svg" width="15px" height="15px" />
-      </button>
       </p>
+      <IconBtn
+        classes="preview-content"
+        iconUrl="/icons/preview.svg"
+        clickHandler={()=>{onQuoteConfirmed(inputValue)}}
+         />
     </div>
   );
 }

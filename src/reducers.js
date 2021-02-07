@@ -1,4 +1,4 @@
-import { UPDATE_IMAGE, UPDATE_QUOTE } from './actions';
+import { UPDATE_IMAGE, UPDATE_QUOTE, UPDATE_FONT } from './actions';
 
 export const quote = (state = "", action) => {
   const { type, payload } = action;
@@ -19,10 +19,26 @@ export const image = (state = "", action) => {
 
   switch (type) {
     case UPDATE_IMAGE:{
-      return state;
+      const { image } = payload;
+      return image;
     }
       break;
     default:
       return state;
   }
+}
+
+export const font = (state = {size: 50, color: "#ffffff"}, action) =>{
+  const { type, payload } = action;
+
+  switch (type) {
+    case UPDATE_FONT:{
+      const { font } = payload;
+      return font;
+    }
+      break;
+    default:
+      return state;
+  }
+
 }

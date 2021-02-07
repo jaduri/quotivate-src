@@ -1,9 +1,10 @@
 import { createStore, combineReducers } from "redux";
-import { image, quote } from "./reducers";
+import { image, quote, font } from "./reducers";
 
 const reducers = {
   image,
-  quote
+  quote,
+  font
 };
 
 const rootReducer = combineReducers(reducers);

@@ -3,8 +3,8 @@ Overlay great quotes on beautiful images and download result
 
 //Outline deliverables
 (using Notepad)
-Generate / Type quote
-Generate / Upload image
+Fetch / Type quote
+Fetch / Upload image
 
 Style quote text
 
@@ -26,15 +26,24 @@ Main Components
 - QuoteGen
 - ImageGen
 - CompositeDisplay
-- Footer
+** Footer pending
 
 Sub Components
-- TextInput
+** TextInput pending
 - TextBtn
 - IconBtn
 
 //Add functionality to front end components
 (using react & redux)
-- Use state to manage controlled inputs
+- Monitor quote input state locally
 - Add upload and download functionality
-- Manage state with redux
+- Monitor image selection state locally
+- View local changes in respective containers
+- Manage global state with redux
+- Use preview button to update redux global state
+- Display quote and image from global state in composite display
+** Download functionality pending
+
+//Build backend structure and endpoints
+- Create directory structure
+- Initialise express server
