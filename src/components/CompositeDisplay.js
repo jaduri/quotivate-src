@@ -1,26 +1,65 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
 
 function CompositeDisplay({ quote, image, font }){
+  const [ x, setX ] = useState(0);
+  const [ y, setY ] = useState(0);
+  const imageContainer = useRef(null);
+  const quoteContainer = useRef(null);
+  const pos = useRef({x: 0, y: 0});
+  const cursor = useRef({x: 0, y: 0})
 
   const fontStyle = {
     fontSize: `${font.size}px`,
     color: `${font.color}`,
-    fontStyle: `bold`
+    fontStyle: `bold`,
+    top: `${y}px`,
+    left: `${x}px`,
+  }
+
+  const drag = (e) => {
+
+    const imageEl = imageContainer.current.getBoundingClientRect();
+    const quoteEl = quoteContainer.current.getBoundingClientRect();
+
+    const top = quoteEl.top - imageEl.top;
+    const left = quoteEl.left - imageEl.left;
+
+    pos.current = {
+      x : left,
+      y : top
+    }
+    cursor.current = {
+      x : e.clientX,
+      y : e.clientY
+    }
+  }
+
+  const drop = (e) => {
+    let topDiff = e.clientY - cursor.current.y;
+    let leftDiff = e.clientX - cursor.current.x;
+
+    setY(pos.current.y + topDiff);
+    setX(pos.current.x + leftDiff);
   }
 
   return (
     <div className="large-container card">
       <div
         className="display-area"
-        style={{
-          backgroundImage: `url("${image}")`,
-          backgroundSize: "auto 100%",
-          backgroundRepeat: "no-repeat"
-        }}
         >
+        <img
+          className="compImg"
+          src={image}
+          ref={imageContainer}
+          alt="image preview"  />
         <p className="quote-area"
-          style={fontStyle} >{quote}</p>
+          style={fontStyle}
+          ref={quoteContainer}
+          draggable="true"
+          onDragStart={drag}
+          onDragEnd={drop} >
+          {quote}</p>
       </div>
       <p className="composite-actions">
         <button className="generate long-btn">
