@@ -124,7 +124,7 @@ main > div{
   display: grid;
   flex-grow: 1;
   gap: 15px;
-  grid-template-rows: min-content min-content;
+  grid-template-rows: min-content 1fr;
   grid-template-areas:
   "quote image"
   "large-container large-container";
@@ -185,6 +185,7 @@ main > div{
 
 /*===================LARGE CONTAINER STYLES==================*/
 .large-container{
+  display: flex;
   background-color: #fff;
   grid-area: large-container;
   width: 73.22vw;
@@ -195,15 +196,20 @@ main > div{
   overflow: hidden;
 }
 .display-area{
+  display: flex;
+  flex-shrink: 1;
   background-position: center;
   margin: auto;
   width: auto;
+  height: 100%;
   position: relative;
   justify-content: center;
   align-items: center;
 }
 .compImg{
-  max-height: 100%;
+  display: block;
+  height: 100%;
+  width: auto;
   max-width: auto;
 }
 .quote-area{

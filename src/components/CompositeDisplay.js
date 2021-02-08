@@ -6,7 +6,6 @@ function CompositeDisplay({ quote, image, font }){
   const [ y, setY ] = useState(0);
   const imageContainer = useRef(null);
   const quoteContainer = useRef(null);
-  const pos = useRef({x: 0, y: 0});
   const cursor = useRef({x: 0, y: 0})
 
   const fontStyle = {
@@ -25,10 +24,6 @@ function CompositeDisplay({ quote, image, font }){
     const top = quoteEl.top - imageEl.top;
     const left = quoteEl.left - imageEl.left;
 
-    pos.current = {
-      x : left,
-      y : top
-    }
     cursor.current = {
       x : e.clientX,
       y : e.clientY
@@ -39,8 +34,34 @@ function CompositeDisplay({ quote, image, font }){
     let topDiff = e.clientY - cursor.current.y;
     let leftDiff = e.clientX - cursor.current.x;
 
-    setY(pos.current.y + topDiff);
-    setX(pos.current.x + leftDiff);
+    setY(state => {
+      return state + topDiff;
+    });
+    setX(state => {
+      return state + leftDiff;
+    });
+  }
+
+  const getDimensions = () => {
+    const imageEl = imageContainer.current.getBoundingClientRect();
+    const imageHeight = imageEl.height;
+    const params = {
+      imageHeight,
+      x,
+      y,
+      fontSize : font.size,
+      fontColor: font.color,
+      quote,
+      image
+    }
+
+    fetch("/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(params);
+    })
   }
 
   return (
