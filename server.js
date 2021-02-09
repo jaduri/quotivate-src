@@ -4,7 +4,7 @@ const app = require("./app");
 
 const server = express();
 
-server.use("/", app);
+server.use(app);
 
 server.listen(port, (err) => {
   if(err) console.error(err);

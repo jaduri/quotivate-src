@@ -151,6 +151,10 @@ main > div{
   grid-area: quote;
   justify-content: space-between;
 }
+.draft-quote{
+  margin-top: 30px;
+  line-height: 1.5;
+}
 .image-container{
   grid-area: image;
   justify-content: space-between;

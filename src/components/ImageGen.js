@@ -22,6 +22,17 @@ function ImageGen({image, onImageConfirmed}){
     }
   }
 
+  const getRandomImage = () => {
+
+    fetch("http://localhost:8080/api/content/image")
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data);
+      return setImageUrl(data.regular);
+    })
+    .catch(err => console.log(err));
+  }
+
   return (
     <div
     className="small-container image-container card"
@@ -32,9 +43,11 @@ function ImageGen({image, onImageConfirmed}){
     >
       <p className="image-getter">
       <input type="text" className="gen-text" />
-      <button className="fresh-content" >
-        <img src="/icons/sync.svg" width="15px" height="15px" />
-      </button>
+      <IconBtn
+        classes="fresh-content"
+        iconUrl="/icons/sync.svg"
+        clickHandler={getRandomImage}
+         />
       </p>
       <input ref={file}
         type="file"

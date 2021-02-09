@@ -28,7 +28,7 @@ export const image = (state = "", action) => {
   }
 }
 
-export const font = (state = {size: 50, color: "#ffffff"}, action) =>{
+export const font = (state = {size: 25, color: "#ffffff"}, action) =>{
   const { type, payload } = action;
 
   switch (type) {

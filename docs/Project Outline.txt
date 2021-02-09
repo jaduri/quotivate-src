@@ -47,3 +47,6 @@ Sub Components
 //Build backend structure and endpoints
 - Create directory structure
 - Initialise express server
+
+//Connect external apis
+(RakutenRapid random quotes api)(Unsplash images api)

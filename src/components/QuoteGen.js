@@ -11,15 +11,26 @@ function QuoteGen({ quote, onQuoteConfirmed }){
     return setInputValue(val);
   }
 
+  const getRandomQuote = () => {
+
+    fetch("http://localhost:8080/api/content/quote")
+    .then(res => res.json())
+    .then(data =>{
+      const { quote, author } = data;
+      return setInputValue(`${quote}\n Author: ${author}`);
+    })
+    .catch(err => console.log(err));
+  }
+
   return (
     <div className="small-container quote-container card">
       <IconBtn
         classes="fresh-content"
         iconUrl="/icons/sync.svg"
-        clickHandler={()=>{"Clicked"}}
+        clickHandler={getRandomQuote}
          />
 
-      <p>{inputValue}</p>
+       <p className="draft-quote">{inputValue}</p>
 
       <p className="quote-setter">
       <input type="text"
