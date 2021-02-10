@@ -6,7 +6,14 @@ const api = require("./api/index.js");
 
 const app = express();
 
+
 app.use(bodyParser.json());
+
+app.use((req, res, next) => {
+  res.set("Access-Control-Allow-Origin", ["*"]);
+  res.set("Access-Control-Allow-Headers", ["Content-Type"]);
+  return next();
+});
 
 app.use("/api", api());
 

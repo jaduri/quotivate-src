@@ -27,7 +27,6 @@ function ImageGen({image, onImageConfirmed}){
     fetch("http://localhost:8080/api/content/image")
     .then(res => res.json())
     .then(data =>{
-      console.log(data);
       return setImageUrl(data.regular);
     })
     .catch(err => console.log(err));
@@ -38,7 +37,9 @@ function ImageGen({image, onImageConfirmed}){
     className="small-container image-container card"
     style={{
       backgroundImage: `url("${imageUrl}")`,
-      backgroundSize: 'cover'
+      backgroundPosition: '50%',
+      backgroundSize: 'auto 100%',
+      backgroundRepeat: 'no-repeat'
     }}
     >
       <p className="image-getter">

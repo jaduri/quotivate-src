@@ -22,7 +22,6 @@ module.exports = () => {
         return response.error
       }
       const { quote, author } = response.body[0];
-      res.set("Access-Control-Allow-Origin", ["*"]);
       return res.json({quote, author});
     })
   });
@@ -35,7 +34,6 @@ module.exports = () => {
       if(response.error){
         return response.error;
       }
-      res.set("Access-Control-Allow-Origin", ["*"]);
       return res.json(response.body.urls);
     });
 
