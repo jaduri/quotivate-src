@@ -28,22 +28,22 @@ function Sidebar({ size, color, onFontChange }){
 
   return (
     <div className="sidebar card">
-      <h2 className="side-heading">Quote Settings</h2>
+      <h2 className="side-heading">Text settings</h2>
       <p className="setting">
         <label>Font size</label>
-        <input type="range"
-          min="10"
-          max="50"
-          value={size}
-          onChange={changeSize}/>
+        <select
+          defaultValue="32"
+          onChange={changeSize}>
+          <option value={8}>8</option>
+          <option value={16}>16</option>
+          <option value={32}>32</option>
+          <option value={64}>64</option>
+          <option value={128}>128</option>
+        </select>
       </p>
       <p className="setting">
         <label>Font colour</label>
         <input type="color" onChange={changeColor}/>
-      </p>
-      <p className="setting">
-        <label>Font style</label>
-        <select></select>
       </p>
       <h2 className="side-heading">Image Settings</h2>
 

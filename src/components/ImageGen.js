@@ -6,17 +6,23 @@ import { updateImage } from "../actions";
 
 function ImageGen({image, onImageConfirmed}){
   const file = useRef(null);
-  const [ imageUrl, setImageUrl ] = useState("/images/sungrass.jpg");
+  const [ imageUrl, setImageUrl ] = useState("/images/sunset.jpg");
+  const [ query, setQuery ] = useState("sunset");
 
   const uploadFile = () => {
     return file.current.click();
   }
 
+  const updateInput = (e) => {
+    const val = e.target.value;
+    return setQuery(val);
+  }
+
   const readFile = async () => {
     const reader = new FileReader();
-    (file.current.files[0] !== undefined) && (
+    if (file.current.files[0]){
       reader.readAsDataURL(file.current.files[0])
-    )
+    }
     reader.onload = function(url){
     return setImageUrl(url.target.result)
     }
@@ -24,7 +30,7 @@ function ImageGen({image, onImageConfirmed}){
 
   const getRandomImage = () => {
 
-    fetch("http://localhost:8080/api/content/image")
+    fetch(`/api/content/image?query=${query}`)
     .then(res => res.json())
     .then(data =>{
       return setImageUrl(data.regular);
@@ -43,7 +49,10 @@ function ImageGen({image, onImageConfirmed}){
     }}
     >
       <p className="image-getter">
-      <input type="text" className="gen-text" />
+      <input type="text"
+        className="gen-text"
+        value={query}
+        onChange={updateInput}/>
       <IconBtn
         classes="fresh-content"
         iconUrl="/icons/sync.svg"

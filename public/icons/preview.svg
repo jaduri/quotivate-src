@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="view.svg"
-   version="1.1"
-   width="512"
-   viewBox="0 0 64 64"
-   height="512"
+   id="Layer_1"
    enable-background="new 0 0 64 64"
-   id="Layer_1">
+   height="512"
+   viewBox="0 0 64 64"
+   width="512"
+   version="1.1"
+   sodipodi:docname="preview.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
   <metadata
      id="metadata19">
     <rdf:RDF>
@@ -29,47 +29,51 @@
   <defs
      id="defs17" />
   <sodipodi:namedview
-     inkscape:current-layer="Layer_1"
-     inkscape:window-maximized="0"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
-     inkscape:cy="187.75964"
-     inkscape:cx="82.777487"
-     inkscape:zoom="0.55372724"
-     showgrid="false"
-     id="namedview15"
-     inkscape:window-height="696"
-     inkscape:window-width="1135"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0"
-     guidetolerance="10"
-     gridtolerance="10"
-     objecttolerance="10"
-     borderopacity="1"
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
      bordercolor="#666666"
-     pagecolor="#ffffff" />
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1135"
+     inkscape:window-height="696"
+     id="namedview15"
+     showgrid="false"
+     inkscape:zoom="0.55372724"
+     inkscape:cx="222.41875"
+     inkscape:cy="225.33195"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" />
   <g
-     style="fill:#ffffff;fill-opacity:1"
-     id="g4">
+     transform="matrix(1.2170559,0,0,1.3817409,-6.9456808,-13.1178)"
+     id="g4"
+     style="fill:#ffffff;fill-opacity:1">
     <path
-       style="fill:#ffffff;fill-opacity:1"
+       d="m 31.983,47.076 c -0.554,0 -1.108,-0.016 -1.665,-0.046 C 20.575,46.485 11.604,41.271 6.319,33.082 5.72,32.154 5.987,30.916 6.915,30.317 c 0.93,-0.599 2.166,-0.331 2.765,0.596 4.592,7.118 12.391,11.65 20.861,12.123 9.116,0.513 18.04,-3.843 23.268,-11.361 0.174,-0.25 0.344,-0.504 0.51,-0.762 0.598,-0.928 1.835,-1.195 2.765,-0.597 0.928,0.599 1.195,1.836 0.597,2.765 -0.19,0.295 -0.386,0.587 -0.587,0.876 -5.696,8.192 -15.2,13.119 -25.111,13.119 z"
        id="path2"
-       d="m31.983 47.076c-.554 0-1.108-.016-1.665-.046-9.743-.545-18.714-5.759-23.999-13.948-.599-.928-.332-2.166.596-2.765.93-.599 2.166-.331 2.765.596 4.592 7.118 12.391 11.65 20.861 12.123 9.116.513 18.04-3.843 23.268-11.361.174-.25.344-.504.51-.762.598-.928 1.835-1.195 2.765-.597.928.599 1.195 1.836.597 2.765-.19.295-.386.587-.587.876-5.696 8.192-15.2 13.119-25.111 13.119z" />
+       style="fill:#ffffff;fill-opacity:1" />
   </g>
   <g
-     style="fill:#ffffff;fill-opacity:1"
-     id="g8">
+     transform="matrix(1.2170559,0,0,1.3817409,-6.9456808,-13.1178)"
+     id="g8"
+     style="fill:#ffffff;fill-opacity:1">
     <path
-       style="fill:#ffffff;fill-opacity:1"
+       d="m 56.002,33.997 c -0.657,0 -1.3,-0.323 -1.683,-0.916 C 49.727,25.963 41.928,21.431 33.458,20.958 24.329,20.437 15.417,24.801 10.19,32.319 10.016,32.569 9.846,32.823 9.68,33.081 9.082,34.009 7.844,34.276 6.915,33.678 5.987,33.079 5.72,31.842 6.318,30.913 c 0.19,-0.295 0.386,-0.587 0.587,-0.876 6.015,-8.65 16.27,-13.647 26.776,-13.073 9.743,0.545 18.714,5.759 23.999,13.948 0.599,0.928 0.332,2.166 -0.596,2.765 -0.335,0.217 -0.711,0.32 -1.082,0.32 z"
        id="path6"
-       d="m56.002 33.997c-.657 0-1.3-.323-1.683-.916-4.592-7.118-12.391-11.65-20.861-12.123-9.129-.521-18.041 3.843-23.268 11.361-.174.25-.344.504-.51.762-.598.928-1.836 1.195-2.765.597-.928-.599-1.195-1.836-.597-2.765.19-.295.386-.587.587-.876 6.015-8.65 16.27-13.647 26.776-13.073 9.743.545 18.714 5.759 23.999 13.948.599.928.332 2.166-.596 2.765-.335.217-.711.32-1.082.32z" />
+       style="fill:#ffffff;fill-opacity:1" />
   </g>
   <g
-     style="fill:#ffffff;fill-opacity:1"
-     id="g12">
+     transform="matrix(1.2170559,0,0,1.3817409,-6.9456808,-13.1178)"
+     id="g12"
+     style="fill:#ffffff;fill-opacity:1">
     <path
-       style="fill:#ffffff;fill-opacity:1"
+       d="m 32,39.997 c -4.411,0 -8,-3.589 -8,-8 0,-4.411 3.589,-8 8,-8 4.411,0 8,3.589 8,8 0,4.411 -3.589,8 -8,8 z m 0,-12 c -2.168,0 -4,1.832 -4,4 0,2.168 1.832,4 4,4 2.168,0 4,-1.832 4,-4 0,-2.168 -1.832,-4 -4,-4 z"
        id="path10"
-       d="m32 39.997c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm0-12c-2.168 0-4 1.832-4 4s1.832 4 4 4 4-1.832 4-4-1.832-4-4-4z" />
+       style="fill:#ffffff;fill-opacity:1" />
   </g>
 </svg>

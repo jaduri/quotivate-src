@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { initialQuote } from "../data";
 import IconBtn from "./sub-components/IconBtn";
 import { connect } from "react-redux";
 import { updateQuote } from "../actions";
 
 function QuoteGen({ quote, onQuoteConfirmed }){
-  const [ inputValue, setInputValue ] = useState("Quote of the day");
+  const [ inputValue, setInputValue ] = useState(initialQuote);
 
   const trackInput = (e) => {
     const val = e.target.value;
@@ -13,7 +14,7 @@ function QuoteGen({ quote, onQuoteConfirmed }){
 
   const getRandomQuote = () => {
 
-    fetch("http://localhost:8080/api/content/quote")
+    fetch("/api/content/quote")
     .then(res => res.json())
     .then(data =>{
       const { quote, author } = data;

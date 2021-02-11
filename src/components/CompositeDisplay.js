@@ -6,7 +6,8 @@ function CompositeDisplay({ quote, image, font }){
   const [ y, setY ] = useState(0);
   const imageContainer = useRef(null);
   const quoteContainer = useRef(null);
-  const cursor = useRef({x: 0, y: 0})
+  const cursor = useRef({x: 0, y: 0});
+  const [ composite, setComposite ] = useState("#");
 
   const fontStyle = {
     fontSize: `${font.size}px`,
@@ -56,15 +57,17 @@ function CompositeDisplay({ quote, image, font }){
       image
     }
 
-    fetch("http://localhost:8080/api/generate", {
+    fetch("/api/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(params)
     })
-    .then(data => data.json())
-    .then(res => alert(res))
+    .then(res => res.json())
+    .then(result => {
+      return setComposite(result);
+    })
     .catch(err => console.error(err));
   }
 
@@ -93,9 +96,11 @@ function CompositeDisplay({ quote, image, font }){
           <span>Generate</span>
           <img src="/icons/create.svg" width="15px" height="15px" />
         </button>
-        <button className="download long-btn">
-          <span>Download</span>
-          <img src="/icons/download.svg" width="15px" height="15px" />
+        <button className="download long-btn" id="download-btn">
+          <a href={composite} className="download-link" download="quotivate">
+            <span>Download</span>
+            <img src="/icons/download.svg" width="15px" height="15px" />
+          </a>
         </button>
       </p>
     </div>

@@ -27,8 +27,8 @@ module.exports = () => {
   });
 
   router.get("/image", (req, res, next) => {
-
-    const imageRequest = unirest("GET", `https://api.unsplash.com/photos/random/?client_id=${process.env.UNSPLASH_API_KEY}`);
+    const url = `https://api.unsplash.com/photos/random/?client_id=${process.env.UNSPLASH_API_KEY}&query=${req.query.query}`;
+    const imageRequest = unirest("GET", url);
 
     imageRequest.end((response) => {
       if(response.error){

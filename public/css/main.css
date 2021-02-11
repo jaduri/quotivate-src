@@ -30,8 +30,8 @@ button{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 35px;
-  min-width: 35px;
+  height: 35px;
+  width: 35px;
   color: #fff;
   outline: none;
   transition: 0.1s ease;
@@ -43,9 +43,17 @@ input{
   outline: none;
 }
 .long-btn{
-  padding-left: 20px;
+  padding-left: 18px;
   padding-right: 20px;
   width: 150px;
+}
+button > img {
+  width: 20px;
+  height: auto;
+}
+.iconBtn > img {
+  width: 30px;
+  height: auto;
 }
 #root{
   height: 100%;
@@ -103,8 +111,9 @@ main > div{
   max-height: 847px;
 }
 .side-heading{
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: normal;
+  color: #005ea6;
 }
 .setting{
   margin: 25px 0;
@@ -239,6 +248,19 @@ main > div{
   margin: auto;
   justify-content: space-between;
   z-index: 1;
+}
+#download-btn{
+  display: flex;
+  justify-content: center;
+}
+.download-link{
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
 }
 
 
