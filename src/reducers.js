@@ -8,7 +8,6 @@ export const quote = (state = "", action) => {
       const { quote } = payload;
       return quote;
     }
-      break;
     default:
       return state;
   }
@@ -22,7 +21,6 @@ export const image = (state = "", action) => {
       const { image } = payload;
       return image;
     }
-      break;
     default:
       return state;
   }
@@ -36,7 +34,6 @@ export const font = (state = {size: 32, color: "#ffffff"}, action) =>{
       const { font } = payload;
       return font;
     }
-      break;
     default:
       return state;
   }

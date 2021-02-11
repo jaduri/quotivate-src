@@ -7,7 +7,7 @@ function TextBtn({clickHandler, text, iconUrl, classes}){
       onClick={clickHandler}
       >
       <span>{text}</span>
-      <img src={iconUrl} width="15px" height="15px" />
+      <img src={iconUrl} width="15px" height="15px" alt=""/>
     </button>
   )
 }

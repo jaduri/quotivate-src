@@ -6,7 +6,7 @@ function IconBtn({clickHandler, iconUrl, classes}){
     <button className={`iconBtn ${classes}`}
       onClick={clickHandler}
       >
-      <img src={iconUrl} width="15px" height="15px" />
+      <img src={iconUrl} width="15px" height="15px" alt="" />
     </button>
   )
 }

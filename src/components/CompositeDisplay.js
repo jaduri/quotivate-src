@@ -29,7 +29,6 @@ function CompositeDisplay({ quote, image, font }){
     let leftDiff = e.clientX - cursor.current.x;
 
     const imageEl = imageContainer.current.getBoundingClientRect();
-    const quoteEl = quoteContainer.current.getBoundingClientRect();
 
     topDiff = (topDiff / imageEl.height) * 100;
     leftDiff = (leftDiff / imageEl.width) * 100;
@@ -66,6 +65,7 @@ function CompositeDisplay({ quote, image, font }){
     })
     .then(res => res.json())
     .then(result => {
+      alert("Your image is now available for download");
       return setComposite(result);
     })
     .catch(err => console.error(err));
@@ -80,7 +80,7 @@ function CompositeDisplay({ quote, image, font }){
           className="compImg"
           src={image}
           ref={imageContainer}
-          alt="image preview"  />
+          alt="preview"  />
         <p className="quote-area"
           style={fontStyle}
           ref={quoteContainer}
@@ -94,12 +94,12 @@ function CompositeDisplay({ quote, image, font }){
           className="generate long-btn"
           onClick={getDimensions}>
           <span>Generate</span>
-          <img src="/icons/create.svg" width="15px" height="15px" />
+          <img src="/icons/create.svg" width="15px" height="15px" alt=""/>
         </button>
         <button className="download long-btn" id="download-btn">
           <a href={composite} className="download-link" download="quotivate">
             <span>Download</span>
-            <img src="/icons/download.svg" width="15px" height="15px" />
+            <img src="/icons/download.svg" width="15px" height="15px" alt=""/>
           </a>
         </button>
       </p>
