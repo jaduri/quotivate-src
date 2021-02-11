@@ -199,7 +199,11 @@ main > div{
 /*===================LARGE CONTAINER STYLES==================*/
 .large-container{
   display: flex;
-  background-color: #fff;
+  background-color: #ededed;
+  background-image: url("/icons/preview.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
   grid-area: large-container;
   width: 73.22vw;
   height: 44.51vw;
